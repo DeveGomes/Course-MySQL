@@ -32,12 +32,20 @@ create table curso(
 grant select, insert on school_english.* to 'root'@'localhost';
 show grants;
 
-insert into aluno(nome,idade,email,nacionalidade ,data_matricula)
+insert into aluno(id,nome,idade,email,nacionalidade ,data_matricula)
  values('André Gomes', '19', 'andrrefon@gmail.com','Brasileiro', '2025-10-16');
- 
- select * from aluno;
+
+ alter table aluno
+  add column id bigint auto_increment primary key first;
+  
+select * from aluno;
+
+alter table professor
+  add column id bigint auto_increment primary key first;
+  
+alter table curso
+  add column id bigint auto_increment primary key first;
 
 
- 
  
  
